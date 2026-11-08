@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "sequence-slot-fastv-attack"
+version = "0.1.0"
+description = "A clean research release of the Phase72 Sequence-Slot FastV attack objective"
+requires-python = ">=3.10"
+dependencies = ["torch>=2.1"]
+
+[project.optional-dependencies]
+dev = ["pytest>=7"]
+llava-next = ["transformers>=4.43", "pillow>=10"]
+
+[project.scripts]
+sequence-slot = "sequence_slot_attack.cli:main"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]

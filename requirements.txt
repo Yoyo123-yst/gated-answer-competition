@@ -1,0 +1,4 @@
+torch>=2.1
+# Optional model integration:
+# transformers>=4.43
+# pillow>=10

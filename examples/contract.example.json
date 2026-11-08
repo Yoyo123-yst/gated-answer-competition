@@ -1,0 +1,12 @@
+{
+  "sample_id": "public-example",
+  "prompt": "Read the requested value from the document.",
+  "answer_aliases": ["example answer"],
+  "pages": [
+    {
+      "path": "page.png",
+      "sha256": "REPLACE_WITH_SHA256_OF_YOUR_CLEAN_PAGE",
+      "role": "auxiliary"
+    }
+  ]
+}

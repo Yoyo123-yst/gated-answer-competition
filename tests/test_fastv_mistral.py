@@ -1,7 +1,7 @@
 import pytest
 import torch
 
-from sequence_slot_attack.fastv_mistral import visual_layout
+from gac_attack.fastv_mistral import visual_layout
 
 
 def test_visual_layout_returns_original_image_placeholder_positions():

@@ -1,5 +1,5 @@
 {
-  "objective_mode": "phase72_legacy",
+  "objective_mode": "gac_legacy",
   "epsilon": 0.03137254901960784,
   "alpha": 0.00392156862745098,
   "max_updates": 13,

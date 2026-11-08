@@ -1,19 +1,19 @@
-# Phase72 Open-Source Release Implementation Plan
+# GAC Open-Source Release Implementation Plan
 
 > **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking.
 
-**Goal:** Release a clean, testable implementation of the frozen Phase72 Sequence-Slot method without modifying or publishing the historical experiment workspace.
+**Goal:** Release a clean, testable implementation of Gated Answer Competition without modifying or publishing the historical experiment workspace.
 
 **Architecture:** The release isolates deterministic contracts, evaluation, objective mathematics, and pixel updates in a dependency-light package. A model adapter owns official LLaVA-Next/FastV forward details so historical artifacts and absolute paths never enter the repository.
 
 **Tech Stack:** Python 3.10+, PyTorch, pytest.
 
-**Spec:** `docs/phase72_release_scope.md`
+**Spec:** `docs/gac_release_scope.md`
 
 ## Global Constraints
 
 - Work only in this standalone repository.
-- Keep `phase72_legacy` as the default objective mode.
+- Keep `gac_legacy` as the default objective mode.
 - Exclude datasets, images, model weights, attack artifacts, absolute paths, and private contracts.
 - Treat saved/reloaded natural FastV plus fresh replay as the only attack endpoint.
 
@@ -27,7 +27,7 @@
 
 ### Task 1: Deterministic core
 
-**Files:** `src/sequence_slot_attack/{contracts,evaluator,objective,update,engine}.py`, `tests/test_*.py`
+**Files:** `src/gac_attack/{contracts,evaluator,objective,update,engine}.py`, `tests/test_*.py`
 
 - [x] Write failing tests for contracts, endpoint evaluation, objective modes, and projection.
 - [x] Implement the dependency-light core.
@@ -35,7 +35,7 @@
 
 ### Task 2: Public execution interface
 
-**Files:** `src/sequence_slot_attack/{runner,cli}.py`, `tests/test_{runner,cli}.py`
+**Files:** `src/gac_attack/{runner,cli}.py`, `tests/test_{runner,cli}.py`
 
 - [x] Write failing tests using a deterministic toy adapter.
 - [x] Implement runner and clean-contract validation CLI.

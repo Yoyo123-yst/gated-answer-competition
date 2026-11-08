@@ -1,15 +1,15 @@
-# Phase72 Sequence-Slot release scope
+# Gated Answer Competition (GAC) release scope
 
 ## Goal
 
-Provide a readable, configuration-driven release of the Phase72
-Sequence-Slot objective for LLaVA-Next/Mistral FastV research.
+Provide a readable, configuration-driven release of Gated Answer Competition
+(GAC) for LLaVA-Next/Mistral FastV research.
 
 ## Included
 
 - A frozen input-contract schema with SHA256 validation.
 - The strict ANLS-style endpoint evaluator used by the project.
-- Pure Sequence-Slot objective and gradient-combination utilities.
+- Pure GAC objective and gradient-combination utilities.
 - A model-agnostic attack loop interface, Mistral FastV hook primitive, and a
   LLaVA-Next/FastV adapter boundary for downstream integration.
 - CLI validation and example configuration files.
@@ -22,10 +22,10 @@ Sequence-Slot objective for LLaVA-Next/Mistral FastV research.
 
 ## Compatibility promise
 
-`phase72_legacy` is the default objective mode. It preserves the historical
+`gac_legacy` is the default objective mode. It preserves the frozen
 surrogate-gradient aggregation convention, including the candidate-gradient
 temperature factor. `canonical` is exposed separately for future validation
-and is never presented as a reproduction of Phase72 results.
+and is never presented as a reproduction of prior internal results.
 
 This release does not include a concrete end-to-end LLaVA-Next adapter because
 official preprocessing and B3 injection are version-sensitive. It is a public

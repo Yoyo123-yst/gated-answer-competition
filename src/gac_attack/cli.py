@@ -24,7 +24,7 @@ def _validate_contract(arguments: argparse.Namespace) -> int:
 
 
 def build_parser() -> argparse.ArgumentParser:
-    parser = argparse.ArgumentParser(description="Sequence-Slot FastV release utilities")
+    parser = argparse.ArgumentParser(description="Gated Answer Competition (GAC) utilities")
     subparsers = parser.add_subparsers(dest="command", required=True)
     validate = subparsers.add_parser("validate-contract", help="validate clean page hashes before an attack")
     validate.add_argument("--contract", required=True, help="path to an input-contract JSON file")

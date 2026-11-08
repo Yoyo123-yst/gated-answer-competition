@@ -1,4 +1,4 @@
-# LLaVA-Next / FastV adapter integration
+# GAC LLaVA-Next / FastV adapter integration
 
 The public package does not guess visual-token ownership or emulate processor geometry. An adapter must obtain these quantities from the official processor and the actual model topology.
 
@@ -13,7 +13,7 @@ For a frozen clean contract, record official processor input and page SHA256 val
 1. capture current B3 pre-pruning hidden state;
 2. replace only `C` in the fixed-clean B3 state with current hidden state without detaching that path;
 3. force complete `S_c` only inside this diagnostic branch;
-4. score online competitor sequences from current pixels; and
+4. score online answer-competition sequences from current pixels; and
 5. return the pixel gradient of the selected sequence objective.
 
 `save_reload(pixels, step)` must return the reloaded pixel tensor, output path,

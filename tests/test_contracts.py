@@ -3,7 +3,7 @@ import json
 
 import pytest
 
-from sequence_slot_attack.contracts import InputContract, verify_contract_files
+from gac_attack.contracts import InputContract, verify_contract_files
 
 
 def test_contract_verifies_named_clean_page_hash(tmp_path):

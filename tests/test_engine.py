@@ -1,6 +1,6 @@
 import torch
 
-from sequence_slot_attack.engine import AttackConfig, run_step
+from gac_attack.engine import AttackConfig, run_step
 
 
 def test_run_step_updates_only_editable_pixels_and_keeps_budget():

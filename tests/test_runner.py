@@ -1,7 +1,7 @@
 import torch
 
-from sequence_slot_attack.engine import AttackConfig
-from sequence_slot_attack.runner import AttackObservation, AttackRunner, ReplayResult, SavedImage
+from gac_attack.engine import AttackConfig
+from gac_attack.runner import AttackObservation, AttackRunner, ReplayResult, SavedImage
 
 
 class ToyAdapter:

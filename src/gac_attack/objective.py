@@ -1,24 +1,24 @@
-"""Pure math for the Sequence-Slot auxiliary objective."""
+"""Pure math for the Gated Answer Competition auxiliary objective."""
 
 from __future__ import annotations
 
 import torch
 
 
-VALID_OBJECTIVE_MODES = frozenset({"phase72_legacy", "canonical"})
+VALID_OBJECTIVE_MODES = frozenset({"gac_legacy", "canonical"})
 
 
-def sequence_slot_gradient(
+def gac_gradient(
     positive_gradient: torch.Tensor,
     candidate_gradients: torch.Tensor,
     candidate_scores: torch.Tensor,
     *,
     tau: float,
-    mode: str = "phase72_legacy",
+    mode: str = "gac_legacy",
 ) -> torch.Tensor:
     """Return gradient of sequence score against the current image.
 
-    `phase72_legacy` reproduces the historical implementation, whose
+    `gac_legacy` preserves the frozen experimental implementation, whose
     candidate term includes an extra `1 / tau`.  `canonical` is the gradient
     of S+ - tau * logsumexp(S- / tau).
     """
@@ -30,7 +30,7 @@ def sequence_slot_gradient(
         raise ValueError("candidate gradient count must equal score count")
     weights = torch.softmax(candidate_scores / tau, dim=0)
     weighted_negative = torch.tensordot(weights, candidate_gradients, dims=([0], [0]))
-    if mode == "phase72_legacy":
+    if mode == "gac_legacy":
         weighted_negative = weighted_negative / tau
     return positive_gradient - weighted_negative
 

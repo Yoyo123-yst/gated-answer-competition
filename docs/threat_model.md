@@ -4,4 +4,4 @@ The attacker may change pixels only in a pre-declared auxiliary document-image r
 
 The defender evaluates a saved/reloaded attacked image with the natural FastV selector, unchanged prompt, processor, decoding parameters, and strict frozen evaluator. No forced keep set, activation patch, or teacher-forcing path is permitted during endpoint evaluation.
 
-This package implements an attack objective, not a claim that every FastV model or document dataset is vulnerable. Any rate or generality claim requires a separately frozen cohort, per-sample contracts, saved-image endpoint records, and fresh-process replays.
+This package implements Gated Answer Competition, not a claim that every FastV model or document dataset is vulnerable. Any rate or generality claim requires a separately frozen cohort, per-sample contracts, saved-image endpoint records, and fresh-process replays.

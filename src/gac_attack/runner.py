@@ -1,4 +1,4 @@
-"""Reusable attack loop; model-specific FastV operations live in an adapter."""
+"""Reusable GAC attack loop; model-specific FastV operations live in an adapter."""
 
 from __future__ import annotations
 
@@ -49,7 +49,7 @@ class TrajectoryStep:
     endpoint_accepted: bool = False
 
 
-class SequenceSlotAdapter(Protocol):
+class GACAdapter(Protocol):
     """Bridge a specific FastV implementation to the public attack loop.
 
     `slot_gradient` must implement the fixed clean reference, clean keep set,
@@ -67,7 +67,7 @@ class SequenceSlotAdapter(Protocol):
 
 
 class AttackRunner:
-    def __init__(self, adapter: SequenceSlotAdapter, config: AttackConfig):
+    def __init__(self, adapter: GACAdapter, config: AttackConfig):
         self.adapter = adapter
         self.config = config
 

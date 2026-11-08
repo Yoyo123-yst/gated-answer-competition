@@ -1,4 +1,4 @@
-from sequence_slot_attack.evaluator import AMBIGUOUS, CORRECT, INVALID_OUTPUT, WRONG, classify_output
+from gac_attack.evaluator import AMBIGUOUS, CORRECT, INVALID_OUTPUT, WRONG, classify_output
 
 
 def test_evaluator_accepts_normalized_exact_alias():

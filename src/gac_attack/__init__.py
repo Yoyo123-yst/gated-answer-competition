@@ -1,4 +1,4 @@
-"""Public implementation of the Phase72 Sequence-Slot research method."""
+"""Public implementation of Gated Answer Competition (GAC)."""
 
 from .engine import AttackConfig
 

@@ -1,4 +1,4 @@
-"""Model-independent one-step Sequence-Slot update mechanics."""
+"""Model-independent one-step Gated Answer Competition update mechanics."""
 
 from __future__ import annotations
 

@@ -1,7 +1,7 @@
 import torch
 
-from sequence_slot_attack.objective import combine_gradients, sequence_slot_gradient
-from sequence_slot_attack.update import project_linf
+from gac_attack.objective import combine_gradients, gac_gradient
+from gac_attack.update import project_linf
 
 
 def test_legacy_and_canonical_modes_only_differ_in_temperature_factor():
@@ -9,8 +9,8 @@ def test_legacy_and_canonical_modes_only_differ_in_temperature_factor():
     candidate_grads = torch.tensor([[1.0, 3.0], [5.0, 7.0]])
     scores = torch.tensor([0.2, 0.4])
 
-    legacy = sequence_slot_gradient(g_plus, candidate_grads, scores, tau=0.5, mode="phase72_legacy")
-    canonical = sequence_slot_gradient(g_plus, candidate_grads, scores, tau=0.5, mode="canonical")
+    legacy = gac_gradient(g_plus, candidate_grads, scores, tau=0.5, mode="gac_legacy")
+    canonical = gac_gradient(g_plus, candidate_grads, scores, tau=0.5, mode="canonical")
 
     weighted = torch.softmax(scores / 0.5, dim=0) @ candidate_grads
     assert torch.allclose(canonical, g_plus - weighted)

@@ -1,7 +1,7 @@
 import hashlib
 import json
 
-from sequence_slot_attack.cli import main
+from gac_attack.cli import main
 
 
 def test_validate_contract_cli_accepts_matching_file(tmp_path, capsys):

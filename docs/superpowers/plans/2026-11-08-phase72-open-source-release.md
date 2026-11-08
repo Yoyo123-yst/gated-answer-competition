@@ -47,4 +47,4 @@
 
 - [x] Document assumptions, compatibility boundary, model integration, and endpoint gate.
 - [x] Verify and audit tracked files.
-- [ ] Commit and publish.
+- [x] Commit and publish.
